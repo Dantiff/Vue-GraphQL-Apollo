@@ -1,7 +1,7 @@
 module.exports = `
   type Query {
     message: String
-    name: String
+    id: Int
   }
 
   schema {
