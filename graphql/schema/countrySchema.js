@@ -1,11 +1,12 @@
+require('apollo-cache-control');
 const countrySchema = [`
-  type Country {
+  type Country @cacheControl(maxAge: 240) {
     name: String
     continentName: String,
     currencyCode: String,
-    countryCode: String,
+    countryCode: String @cacheControl(maxAge: 30),
     population: String,
-    continentCode: String
+    continentCode: String,
     capital: String,
   }
 `];

@@ -4,8 +4,8 @@ const typeDefs = [`
   schema {
     query: Query
   }
-  type Query {
-    allCountries: [Country]
+  type Query @cacheControl(maxAge: 240) {
+    allCountries: [Country] @cacheControl(maxAge: 240)
   }
 `];
 

@@ -7,8 +7,8 @@ const rootResolvers = {
   Query: {},
 };
 
+// Put together the resolvers
 const resolvers = merge(rootResolvers, countrySearchResolvers);
-console.log('Result resolver', resolvers)
 
 // Put together a schema
 const rootSchema = makeExecutableSchema({
