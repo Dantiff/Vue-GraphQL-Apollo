@@ -10,6 +10,11 @@
           allCountries {
             name
             continentName
+            currencyCode
+            countryCode
+            population
+            continentCode
+            capital
           }
         }
         `,
@@ -33,21 +38,19 @@
 </script>
 
 <template>
-  <!-- <div v-if="allCountries !== undefined"> -->
-    <div class="view" v-if="allCountries !== null">
-      <div v-for="(c, i) in allCountries.allCountries" :key="i">
-        <h1> {{ c.name }} </h1>
-      </div>
+  <div class="view" v-if="allCountries !== null">
+    <div v-for="(c, i) in allCountries" :key="i">
+      <h1> {{ c.name }} </h1>
     </div>
-    <div class="view"  v-else>
-      <h1> We still online</h1>
-    </div>
-  <!-- </div> -->
+  </div>
+  <div class="view"  v-else>
+    <h1> We still online</h1>
+  </div>
 </template>
 
 <style scoped>
   .view {
-    display: flex;
+    display: block;
     height: 100%;
     align-items: center;
     justify-content: center;
