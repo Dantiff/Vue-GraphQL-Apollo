@@ -11,6 +11,4 @@ const typeDefs = [`
 
 const rootDefinition = [...typeDefs, ...countrySchema];
 
-console.log(rootDefinition, countrySchema);
-
 module.exports = rootDefinition;

@@ -17,6 +17,7 @@ const resolvers = merge(rootResolvers);
 
 const rootSchema = makeExecutableSchema({
   typeDefs: rootDefs,
+  logger,
   resolvers,
 });
 
