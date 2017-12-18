@@ -2,7 +2,7 @@ const getCountries = require('../connectors/geoConnectors');
 
 module.exports = {
   Query: {
-    async allCountries() {
+    allCountries: async () => {
       return await getCountries();
     }
   }
