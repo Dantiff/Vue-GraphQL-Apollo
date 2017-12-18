@@ -1,18 +1,18 @@
 
-const rp = ('request-promise');
-const { get } = ('lodash');
+const rp = require('request-promise');
+const { get } = require('lodash');
 
 const username = 'dantiff';
 
 module.exports = function getCountries() {
-  const url = `http://api.geonames.org/countryInfoJSON?username=${username}&style=full`;
+  const url = `http://geonames.org/countryInfoJSON?&style=full`;
   var options = {
     uri: url,
     json: true // Automatically parses the JSON string in the response
   };
   return rp(options).then((data) => {
     const geoNames = get(data, 'geonames');
-    return geoNames.map(({ capital, continent, population, continentName, countryName, currencyCode, countryCode }) => {
+    const returner = geoNames.map(({ capital, continent, population, continentName, countryName, currencyCode, countryCode }) => {
       return {
         continentName,
         name: countryName,
@@ -23,7 +23,9 @@ module.exports = function getCountries() {
         capital,
       };
     });
+    return returner;
   }).catch((error) => {
+    console.log('The error', error)
     throw new Error(error.reason);
   });
 }

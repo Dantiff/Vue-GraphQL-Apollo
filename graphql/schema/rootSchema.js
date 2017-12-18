@@ -13,11 +13,11 @@ const rootResolvers = {
   Query: {},
 };
 
-const resolvers = merge(rootResolvers);
+const resolvers = merge(rootResolvers, countrySearchResolvers);
+console.log('Result resolver', resolvers)
 
 const rootSchema = makeExecutableSchema({
   typeDefs: rootDefs,
-  logger,
   resolvers,
 });
 

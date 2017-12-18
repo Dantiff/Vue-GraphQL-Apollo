@@ -11,15 +11,16 @@ const app = express()
 const host = 'localhost'
 const port = 47274
 
+// add typeDefs to executable schema
 // const schema = makeExecutableSchema({
 //   typeDefs,
 // });
 
 // add mock functions
-addMockFunctionsToSchema({
-  schema,
-  mocks
-})
+// addMockFunctionsToSchema({
+//   schema,
+//   mocks
+// })
 
 // cors middleware
 app.use(cors())
